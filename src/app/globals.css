@@ -13,17 +13,98 @@
   --color-gray-500: #6b7280;
   --color-gray-600: #4b5563;
   --color-gray-900: #111827;
+  --color-primary-100: #a78bfa;
+  --color-primary-200: #8b5cf6;
+  --color-primary-300: #7c3aed;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-300: #d5d7da;
+  --color-neutral-400: #a4a7ae;
+  --color-neutral-500: #717680;
+  --color-neutral-800: #252b37;
+  --color-neutral-950: #0A0D12;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
+  --color-primary-200: var(--color-primary-200);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-400: var(--color-neutral-400);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-800: var(--color-neutral-800);
+  --color-neutral-950: var(--color-neutral-950);
+
+  /* Custom spacing dengan 1px ratio (1:1 bukan 1:4) khusus untuk TailwindCSS V4*/
+  --spacing-0: 0px;
+
+  --spacing-1: 1px;
+  --spacing-2: 2px;
+  --spacing-3: 3px;
+  --spacing-4: 4px;
+  --spacing-5: 5px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-14: 14px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-22: 22px;
+  --spacing-24: 24px;
+  --spacing-26: 26px;
+  --spacing-28: 28px;
+  --spacing-30: 30px;
+  --spacing-32: 32px;
+  --spacing-56: 56px;
+  --spacing-120: 120px;
   
   /* Custom spacing dengan 1px ratio (1:1 bukan 1:4) */
   /* p-1 = 1px, p-4 = 4px, p-16 = 16px */
   /* Spacing sudah dikonfigurasi di tailwind.config.ts */
+
+  --gradient-primary: linear-gradient(
+    127.48deg,
+    #7C3AED -5.18%,
+    #DB2777 100.8%
+  );
+}
+
+/* Custom utilities ukuran Font khusus untuk TailwindCSS V4*/
+@layer utilities {
+  .display-2xl-bold {
+    font-size: 3rem;     
+    font-weight: 700;
+    line-height: 3.75rem;
+    letter-spacing: -0.03em;
+  }
+  /* Custom utilities warna khusus untuk TailwindCSS V4*/
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  .bg-primary-200 {
+    background-color: var(--color-primary-200);
+  }
+  .text-neutral-100 {
+    color: var(--color-neutral-100);
+  }
+  .text-neutral-500 {
+    color: var(--color-neutral-500);
+  }
+  .text-neutral-300 {
+    color: var(--color-neutral-300);
+  }
+  .text-neutral-400 {
+    color: var(--color-neutral-400);
+  }
+  .bg-neutral-500 {
+    background-color: var(--color-neutral-500);
+  }
+  .bg-neutral-800 {
+    background-color: var(--color-neutral-800);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,5 +117,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
